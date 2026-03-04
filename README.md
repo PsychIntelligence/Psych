@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/Vercel-000?style=flat-square&logo=vercel&logoColor=white" />
 </p>
 
-<h1 align="center">psych</h1>
+<h1 align="center">Psych</h1>
 
 <p align="center">
   Understanding market psychology starts from your own trades.
@@ -19,7 +19,7 @@
 
 ## About
 
-psych is an on-chain behavioral analytics platform for Solana traders. It reads public swap history from any wallet, runs pattern detection across trade sequences, computes realized P&L, and surfaces the psychological habits that most traders never notice in themselves.
+Psych is an on-chain behavioral analytics platform for Solana traders. It reads public swap history from any wallet, runs pattern detection across trade sequences, computes realized P&L, and surfaces the psychological habits that most traders never notice in themselves.
 
 It is not a portfolio tracker. It is not a trading terminal. It does not tell you what to buy. It tells you how you behave, and where that behavior costs you money.
 
