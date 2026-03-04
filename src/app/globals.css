@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ══════════════════════════════════════════════
+       PSYCH — Design tokens. Dark-first.
+       All surfaces, borders, and radii reference these.
+       ══════════════════════════════════════════════ */
+
+    /* ── Backgrounds ───────────────────────────── */
+    --bg:       #0a0a11;
+    --bg2:      #0e0e17;
+    --bg-glow:  rgba(231, 76, 60, 0.04);
+
+    /* ── Surfaces (matte, no shine) ──────────── */
+    --surface:     #0e0e16;
+    --surface2:    #121220;
+    --surface-hl:  rgba(255, 255, 255, 0.006);
+    --surface-trim:rgba(255, 255, 255, 0.01);
+
+    /* ── Borders (subtle) ─────────────────────── */
+    --stroke:      rgba(255, 255, 255, 0.04);
+    --stroke2:     rgba(255, 255, 255, 0.02);
+    --stroke-vivid:rgba(255, 255, 255, 0.07);
+    --stroke-hover:rgba(255, 255, 255, 0.05);
+
+    /* ── Text ──────────────────────────────────── */
+    --text:     #ddd8ce;
+    --text2:    #8b8898;
+    --muted:    #58586a;
+    --ghost:    #333342;
+
+    /* ── Accent ────────────────────────────────── */
+    --accent:      #e74c3c;
+    --accent-soft: rgba(231, 76, 60, 0.10);
+    --accent-glow: rgba(231, 76, 60, 0.18);
+    --accent-dim:  rgba(231, 76, 60, 0.04);
+
+    /* ── Semantic ──────────────────────────────── */
+    --success:      #2eaa60;
+    --success-soft: rgba(46, 170, 96, 0.10);
+    --warning:      #e0a030;
+    --warning-soft: rgba(224, 160, 48, 0.10);
+    --gold:         #f1c40f;
+
+    /* ── Radius (unified: matches search bar) ─── */
+    --r:    6px;
+    --r-sm: 4px;
+    --r-xs: 3px;
+
+    /* ── Shadows ───────────────────────────────── */
+    --sh-surface:0 1px 2px rgba(0,0,0,0.3), 0 2px 8px rgba(0,0,0,0.15);
+    --sh-deep:   0 1px 3px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.2);
+    --sh-lift:   0 1px 4px rgba(0,0,0,0.25), 0 4px 12px rgba(0,0,0,0.12);
+    --sh-inset:  inset 0 0 0 1px var(--stroke2);
+    --sh-inset-hover: inset 0 0 0 1px var(--stroke-hover);
+
+    /* ── Spacing scale ─────────────────────────── */
+    --s-1: 4px;  --s-2: 8px;  --s-3: 12px;
+    --s-4: 16px; --s-5: 20px; --s-6: 24px;
+    --s-8: 32px; --s-10: 40px; --s-12: 48px;
+  }
+
+  /* ── Light theme ─────────────────────────── */
+  [data-theme="light"] {
+    --bg:       #f5f3ef;
+    --bg2:      #edeae4;
+    --bg-glow:  rgba(231, 76, 60, 0.06);
+
+    --surface:     #ffffff;
+    --surface2:    #f7f5f1;
+    --surface-hl:  rgba(0, 0, 0, 0.008);
+    --surface-trim:rgba(0, 0, 0, 0.015);
+
+    --stroke:      rgba(0, 0, 0, 0.08);
+    --stroke2:     rgba(0, 0, 0, 0.04);
+    --stroke-vivid:rgba(0, 0, 0, 0.12);
+    --stroke-hover:rgba(0, 0, 0, 0.10);
+
+    --text:     #1a1a20;
+    --text2:    #5a5868;
+    --muted:    #8a889a;
+    --ghost:    #c0bece;
+
+    --accent:      #d94335;
+    --accent-soft: rgba(231, 76, 60, 0.10);
+    --accent-glow: rgba(231, 76, 60, 0.14);
+    --accent-dim:  rgba(231, 76, 60, 0.04);
+
+    --success:      #1e8a4a;
+    --success-soft: rgba(30, 138, 74, 0.10);
+    --warning:      #c08820;
+    --warning-soft: rgba(192, 136, 32, 0.10);
+    --gold:         #d4a90c;
+
+    --sh-surface:0 1px 2px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+    --sh-deep:   0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.06);
+    --sh-lift:   0 1px 4px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+    --sh-inset:  inset 0 0 0 1px var(--stroke2);
+    --sh-inset-hover: inset 0 0 0 1px var(--stroke-hover);
+
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    color-scheme: dark;
+  }
+
+  [data-theme="light"] html,
+  html[data-theme="light"] {
+    color-scheme: light;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  ::selection {
+    background: var(--accent-soft);
+    color: var(--text);
+  }
+
+  .pixel-render {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+}
+
+@layer components {
+  .c-text   { color: var(--text); }
+  .c-text2  { color: var(--text2); }
+  .c-muted  { color: var(--muted); }
+  .c-ghost  { color: var(--ghost); }
+  .c-accent { color: var(--accent); }
+
+  .custom-scroll::-webkit-scrollbar { width: 4px; }
+  .custom-scroll::-webkit-scrollbar-track { background: transparent; }
+  .custom-scroll::-webkit-scrollbar-thumb { background: var(--ghost); border-radius: 9999px; }
+  .custom-scroll::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+  .shimmer {
+    background: linear-gradient(90deg, var(--surface) 25%, var(--surface2) 50%, var(--surface) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s ease-in-out infinite;
+  }
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .scanline {
+    background: linear-gradient(90deg, transparent 0%, var(--accent-dim) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: scanline 1.5s ease-in-out infinite;
+  }
+  @keyframes scanline {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* ── Gradient divider (fades at edges) ────── */
+  .divider-gradient {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--stroke) 20%, var(--stroke) 80%, transparent 100%);
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
